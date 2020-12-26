@@ -1,0 +1,60 @@
+.ripple {
+    position: relative;
+    /*//隐藏溢出的径向渐变背景*/
+    //overflow: hidden;
+}
+
+.ripple:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    /*//设置径向渐变*/
+    background-image: radial-gradient(circle, #666 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform .3s, opacity .5s;
+}
+
+.ripple:active:after {
+    transform: scale(0, 0);
+    opacity: .3;
+    /*//设置初始状态*/
+    transition: 0s;
+}
+.btn-sign1{
+    border-width:0px;
+    background:url(../../assets/shouji.jpg) no-repeat 0 0;
+     width: 135px;
+     height: 85px;
+}
+
+.btn-sign2{
+    border-width:0px;
+    background:url(../../assets/kongtiao.jpg) no-repeat 0 0;
+     width: 135px;
+     height: 85px;
+}
+
+.btn-sign3{
+    border-width:0px;
+    background:url(../../assets/taideng.jpg) no-repeat 0 0;
+     width: 135px;
+     height: 85px;
+}
+.btn-sign4{
+    border-width:0px;
+    background:url(../../assets/shexiangtou.jpg) no-repeat 0 0;
+     width: 135px;
+     height: 85px;
+}
+
+
+
+

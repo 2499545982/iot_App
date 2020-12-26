@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title [routerLink]="['../../../../']">{{title}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-infinite-scroll>
+        <!-- <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data…">
+        </ion-infinite-scroll-content> -->
+
+        <div echarts [options]="chartOption" class="demo-chart" *ngIf="flag"></div>
+        <div style="margin-top: -20%;margin-left: 10%;" *ngIf="flag">
+            <div style="margin-top: 20%;">
+                <!--  -->
+                <!--  -->
+                <a type="button" (click)="B()">
+                    <img src="{{img}}">
+                </a>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="d-flex flex-column align-items-center ">
+            <div class="btn-group " role="group" aria-label="Basic example" style="width: 80%;">
+                <section style="width: 100%;">
+                    <ion-button size="default" color="primary" fill="outline" shape="round" (click)="getsersor()"
+                        style="width: 100%;">
+                        {{button}}</ion-button>
+                    <p></p>
+                    <ion-button size="default" color="primary" fill="outline" shape="round" (click)="getdata(50)"
+                        style="width: 100%;">
+                        获取</ion-button>
+                </section>
+            </div>
+        </div> -->
+        <!-- <ion-button (click)="getsersor()">{{button}}</ion-button>
+        <ion-button (click)="getdata(10)">getdata</ion-button> -->
+    </ion-infinite-scroll>
+</ion-content>

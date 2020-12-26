@@ -1,0 +1,41 @@
+<ion-header style="height: 5%;">
+    <ion-toolbar>
+        <ion-title>
+                <ion-icon name="chevron-back-outline" size="large" [routerLink]="['']"></ion-icon>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form [formGroup]="myForm">
+        <div class="d-flex flex-column align-items-center ">
+            <div style="height: 10vh;">
+            </div>
+            <div style="width: 40px;margin-top:20px; ">
+                <img src="../../assets/loginlogo.png" width="40" height="40">
+            </div>
+            <div style="width: 80%; margin-top:40px;">
+                <ion-item>
+                    <ion-input type="userName" id="userName" placeholder="请输入用户名" name="userName"
+                        [formControl]="username">
+                    </ion-input>
+                </ion-item>
+            </div>
+            <div style="width: 80%; margin-top:30px;">
+                <ion-item>
+
+                    <ion-input type="password" id="password" name="password" placeholder="请输入密码"
+                        [formControl]="password">
+                    </ion-input>
+                </ion-item>
+            </div>
+            <div style="width: 80%; margin-top:10px;padding-left:12rem;">
+                <a style="color:lightgrey;">忘记密码</a>
+            </div>
+            <div style="width: 80%;margin-top:20px;">
+                <ion-button expand="block" color="success"  shape="round" (click)='login()'>
+                    登录</ion-button>
+            </div>
+        </div>
+    </form>
+</ion-content>

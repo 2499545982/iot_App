@@ -1,0 +1,57 @@
+<!-- <ion-header>
+    <ion-toolbar>
+        <ion-title>登陆主页面</ion-title>
+    </ion-toolbar>
+</ion-header> -->
+
+<!-- <ion-content [fullscreen]="true">
+    <ion-img src="../../assets/background.png"></ion-img>
+</ion-content> -->
+<div style="position: absolute;width: 100%;height: 100%;
+background-image: url('../../assets/background4.png');">
+    <div style="height: 40%;">
+        <div style="height: 40%;">
+        </div>
+        <div style="margin: 0 auto;width:  80px;">
+            <img src="../../assets/AppLogo.png" style="height: 80px;">
+        </div>
+    </div>
+    <div style=" width: 60%; margin:0 auto">
+        <ion-button color="light" fill="outline" shape="round" [routerLink]="['/login']">使用已有账号登录</ion-button>
+        <!-- //[routerLink]="['/regeist']" -->
+        <br><br><br>
+        <ion-button color="light" fill="outline" shape="round" (click)="openModal(template)">创建新账号</ion-button>
+        <br><br>
+        <form [formGroup]="myForm">
+            <ion-input [formControl]="address"></ion-input>
+        </form>
+        <ion-button color="light" fill="outline" shape="round" (click)="seturl()">设置服务器地址</ion-button>
+    </div>
+</div>
+
+<ng-template #template>
+    <div class="d-flex flex-column align-items-center ">
+        <div class="align-self-center d-flex text-center">
+            <h4>用户须知</h4>
+        </div>
+        <div class="align-self-center " style="width: 80%; ">
+            <dl>
+                <dd>- 我们深知隐私对您的重要性，为了更全面地呈现我们收集和使用您个人信息的相关情况，
+                    我们根据最新法律法规的要求，对隐私政策和用户协议进行了详细的修订。</dd>
+                <dd>- 当您点击【同意】即表示您已充分阅读、理解并接受更新过的《隐私政策》
+                    和《用户协议》的全部内容。请花一些时间熟悉我们的隐私政策，
+                    如果您有任何问题，请随时联系我们。</dd>
+                <dd><a href="#" target="_blank">隐私政策</a>&nbsp;&nbsp;与&nbsp;&nbsp;<a href="#" target="_blank">用户协议</a>
+                </dd>
+            </dl>
+        </div>
+        <div class="btn-group " role="group" aria-label="Basic example" style="width: 80%; ">
+            <section>
+                <ion-button color="primary" fill="outline" shape="round" (click)="default()">
+                    &nbsp;&nbsp;&nbsp;不&nbsp;&nbsp;同&nbsp;&nbsp;意&nbsp;&nbsp;&nbsp;&nbsp;</ion-button>
+                <ion-button color="primary" fill="outline" shape="round" (click)="regeist()">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同&nbsp;&nbsp;&nbsp;&nbsp;意&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</ion-button>
+            </section>
+        </div>
+    </div>
+</ng-template>

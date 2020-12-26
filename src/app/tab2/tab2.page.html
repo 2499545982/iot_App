@@ -1,0 +1,111 @@
+<!-- <ion-header>
+    <div style="margin : 4% 0 0 5%;font-size: 1.5rem;width: 100%;height: 5%;">
+        <ion-icon name="chevron-back-outline" size="large"></ion-icon>
+    </div>
+</ion-header> -->
+<style>
+    div[scrollx=true],
+    div[scrolly=true] {
+        position: relative;
+        overflow: hidden;
+    }
+
+    div[scrollx=true] {
+        overflow-x: auto;
+    }
+
+    div[scrolly=true] {
+        overflow-y: auto;
+    }
+
+</style>
+<ion-content>
+    <!-- <ion-scroll direction='xy' style="width: 600px;white-space: nowrap;height: 500px;overflow-x: scroll;"> -->
+    <!-- <ion-alert-controller></ion-alert-controller> -->
+
+    <!-- <ion-alert-controller></ion-alert-controller> -->
+    <div class="item item-input-inset" style="width: 100%;margin-top: 20px;">
+        <ion-toolbar>
+            <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+        </ion-toolbar>
+        <ion-segment value="favorite">
+            <ion-segment-button value="favorite" (click)="chaxun()">
+                <ion-icon name="options-outline"></ion-icon>
+                <ion-label>查询</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="call" (click)="delete()">
+                <ion-icon name="pencil-outline"></ion-icon>
+                <ion-label>删除</ion-label>
+            </ion-segment-button>
+        </ion-segment>
+    </div>
+    <div scrollx="true" scrolly="true" id="scroll-list">
+        <div style="height: 100%;margin : 5% 0 0 0;padding-left:15px ;">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            编号
+                        </th>
+                        <th>
+                            设备名称
+                        </th>
+                        <th>
+                            设备类型
+                        </th>
+                        <th>
+                            具体位置
+                        </th>
+                        <th>
+                            创建时间
+                        </th>
+                        <th>
+                            设备功能
+                        </th>
+                        <th>
+                            状态
+                        </th>
+                        <th>
+                            备注
+                        </th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let i of device let index=index">
+                    <!-- (click)="huixian(i.DeviceName)" -->
+                    <tr [ngClass]="{success:index%5==1,error:index%5==2,warning:index%5==3,info:index%5==4}">
+                        <td>
+                            {{index+1}}
+                        </td>
+                        <td>
+                            {{i.DeviceName}}
+                        </td>
+                        <td>
+                            {{i.type}}
+                        </td>
+                        <td>
+                            {{i.Specific_location}}
+                        </td>
+                        <td>
+                            {{i.Create_Time}}
+                        </td>
+                        <td>
+                            {{i.Device_Function}}
+                        </td>
+                        <td>
+                            {{i.status}}
+                        </td>
+                        <td>
+                            {{i.Remarks}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- </ion-scroll> -->
+    <!-- <ion-alert-controller></ion-alert-controller> -->
+    <div class="item item-input-inset" style="width: 100%;">
+        <ion-button expand="block" (click)="presentAlertPrompt()">添加/修改
+        </ion-button>
+    </div>
+</ion-content>

@@ -1,0 +1,51 @@
+<!-- <ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>
+            Tab 3
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+        <ion-toolbar>
+            <ion-title size="large">Tab 3</ion-title>
+        </ion-toolbar>
+    </ion-header>
+
+    <app-explore-container name="Tab 3 page"></app-explore-container>
+</ion-content> -->
+<ion-header translucent>
+    <ion-toolbar>
+        <ion-title>
+            <ion-icon name="person-sharp"></ion-icon>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+    <div style="padding: 10px; margin-top: 15%;font-size: 20px;">
+        <ion-label>用户名</ion-label>
+        <ion-label>:</ion-label>
+        <ion-label>{{name}}</ion-label>
+    </div>
+    <div style="padding: 10px;font-size: 20px;">
+        <ion-label>手机号</ion-label>
+        <ion-label>:</ion-label>
+        <ion-label>{{phone}}</ion-label>
+    </div>
+
+    <div style="padding: 10px;margin-top: 5%;">
+        <form [formGroup]="myForm">
+            <ion-input placeholder="新手机号" [formControl]="number">
+            </ion-input>
+            <ion-input placeholder="新的密码" [formControl]="ps">
+            </ion-input>
+        </form>
+        <ion-button expand="block" (click)="update()">
+            <ion-icon name="pencil-outline"></ion-icon>
+            修改
+        </ion-button>
+    </div>
+
+
+</ion-content>
